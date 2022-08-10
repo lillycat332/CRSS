@@ -3,5 +3,5 @@
 (provide (struct-out rule))
 (provide (struct-out rule-field))
 
-(struct rule (body))
+(struct rule (name body))
 (struct rule-field (name val))

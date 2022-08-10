@@ -2,9 +2,11 @@
 
 (require "types.rkt")
 
+;; Testing rule structure
 (define my-rule
-  (rule
-   (rule-field "display" "flex")))
+  (rule "center"
+        '((rule-field "display" "flex")
+        (rule-field "justify-content" "center")
+        (rule-field "align-items" "center"))))
 
-(displayln (~a (rule-field-val  (rule-body my-rule)) " : "
-               (rule-field-name (rule-body my-rule))))
+rule-field-val (first (rule-body my-rule))
