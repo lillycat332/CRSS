@@ -1,7 +1,6 @@
 #lang racket
 
-(struct rule (body))
-(struct rule-field (name val))
+(require "types.rkt")
 
 (define my-rule
   (rule
