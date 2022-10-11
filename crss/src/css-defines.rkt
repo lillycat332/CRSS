@@ -1,0 +1,16 @@
+#lang racket
+(require "types.rkt")
+(provide (all-defined-out))
+
+(define background-color (property "background-color")) 
+(define border (property "border"))
+(define border-radius (property "border-radius"))
+(define color (property "color"))
+(define disp (property "display"))
+(define font-family (property "font-family"))
+(define font-size (property "font-size"))
+(define height (property "height"))
+(define margin (property "margin"))
+(define padding (property "padding"))
+(define position (property "position"))
+(define width (property "width"))

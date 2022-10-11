@@ -1,7 +1,15 @@
 #lang racket
 
-(provide (struct-out rule))
-(provide (struct-out rule-field))
+(provide (all-defined-out))
 
-(struct rule (name body))
-(struct rule-field (name val))
+(struct decl
+	(prop val) #:transparent)
+
+(struct selector 
+	(name [children]) #:transparent)
+
+(struct property 
+	(name) #:transparent)
+
+(define (rule-decls rule)
+	(selector-children rule))

@@ -1,12 +1,16 @@
 #lang racket
 
-(require "types.rkt")
+(require racket/cmdline)
 
-;; Testing rule structure
-(define my-rule
-  (rule "center"
-        '((rule-field "display" "flex")
-        (rule-field "justify-content" "center")
-        (rule-field "align-items" "center"))))
+(define verbose-mode (make-parameter #f))
 
-rule-field-val (first (rule-body my-rule))
+(define outfile
+  (command-line
+   #:program "css-compiler"
+   #:once-each
+   [("-v" "--verbose") "Compile with verbose error/warn messages"
+                       (verbose-mode #t)]
+
+   #:args (output-filename)
+   output-filename))
+
